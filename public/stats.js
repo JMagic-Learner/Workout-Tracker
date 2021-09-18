@@ -1,3 +1,16 @@
+const mongoose = require("mongoose");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
+const db = mongoose.connection;
+
+function getWorkoutsInRange() {
+  const results = db.workouts.find({"exercises.type": "resistance"});
+  return results; 
+}
+
+
 function calculateTotalWeight(data) {
   const totals = [];
 
@@ -108,4 +121,4 @@ function populateChart(data) {
 }
 
 // get all workout data from back-end
-API.getWorkoutsInRange().then(populateChart);
+db.getWorkoutsInRange().then(populateChart);

@@ -1,3 +1,7 @@
+const continueButton =  document.getElementById('continue-btn');
+
+
+
 init();
 
 async function init() {
