@@ -2,12 +2,17 @@
 
 async function initWorkout() {
   const lastWorkout = await API.getLastWorkout();
-  console.log("THIS IS THE LAST Last workout:", lastWorkout);
+  const lastWorkoutArray = JSON.stringify(lastWorkout.exercises[0].name);
+  console.log("This is the name of the last workout" + lastWorkoutArray);
+  
   console.log(JSON.stringify(lastWorkout));
   if (lastWorkout) {
     document
       .querySelector("a[href='/exercise?']")
       .setAttribute("href", `/exercise?id=${lastWorkout._id}`);
+    const target = document.getElementById("PlaceHolder").innerHTML.replace(/text/, "test");
+   
+      
 
     const workoutSummary = {
       date: formatDate(lastWorkout.day),
