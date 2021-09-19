@@ -1,6 +1,3 @@
-const continueButton =  document.getElementById('continue-btn');
-
-
 
 init();
 

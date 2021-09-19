@@ -1,15 +1,20 @@
 
 
-function getWorkoutsInRange() {
-  const results = db.workouts.find({"exercises.type": "resistance"});
-  return results; 
-}
+
+fetch("/api/workouts/range")
+.then(response => {
+  return response.json();
+})
+.then(data => {
+  populateChart(data);
+});
 
 
 function calculateTotalWeight(data) {
   const totals = [];
 
   data.forEach((workout) => {
+    console.log(workout);
     const workoutTotal = workout.exercises.reduce((total, { type, weight }) => {
       if (type === 'resistance') {
         return total + weight;
@@ -116,4 +121,4 @@ function populateChart(data) {
 }
 
 // get all workout data from back-end
-db.getWorkoutsInRange().then(populateChart);
+API.getWorkoutsInRange().then(populateChart);
