@@ -1,61 +1,72 @@
-# Unit 18 Nosql Homework: Workout Tracker
 
-For this assignment, you'll create a workout tracker. You have already been provided with the front end code in the `Develop` folder. This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express.
+# Workout Tracker
+![NPM](https://img.shields.io/npm/l/inquirer)
 
-## User Story
+[LIVE DEPLOY](https://JMagic-Learner.github.io/Workout Tracker)
+[HEROKU DEPLOY](https://tranquil-harbor-49024.herokuapp.com/)
+## Description
+Hello, my name is Jason Ma. This application is called Workout Tracker.
+              
+Description:
+This application helps track and record your workout regimen. As a user, you can build your own workout plan with the help of MongoDB.              
+          
+Coding Process
+First, I had to test if the local database even registered. I used Mongosh to verify the database / collection. Next I had to test out if the database was even being called by the application. The front end of the application was already provided by UWBOOTCAMP. Our task is to complete the backend MODELS, ROUTES etc. Initially, I had a problem where the local database had the code seeded, but the routes were missing their calls/fetches. I went to RYAN TA to help explain my application deficiencies. The source of the problem was the ROUTES folder, or more specifically on how the API/WORKOUTS etc were being called. Since i already had a index file detailing where the routes are to be redirected, the indvidivudal GET/ POST /PUT commands had the wrong syntax. Instead of /api/workouts/range, it was supposed to be /workouts/range. Overall this assignment was difficult in a way due to the fact that as a coder, i was stepping into a application with functionalities unknown to me. Half the battle was deciphering which JS file in assets did what.
+              
+# Table of Contents 
+If your README is long, add a table of contents to make it easy for users to find what they need.
+- [Installation](##-Installation)
+- [Usage](#Usage)
+- [Credits](#Credits)
+- [License](#license)
+- [Contribution](#contribution)
+- [Test](#test)
+- [Question](#question)
+              
+# Installation
 
-* As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
+Link to video demonstration how this application works:
+https://drive.google.com/file/d/13Wi25qLBlX8RQuU2vu-ZwW8qSMlAgd3g/view
+              
 
-## Business Context
+Step 1.) Download/Clone the github repo.,
 
-A consumer will reach their fitness goals more quickly when they track their workout progress.
+Step 2.) NPM i dependencies,
 
-## Acceptance Criteria
+Step 3.) Enter Mongod or Mongosh in your terminal, enter `use workouts`,
 
-When the user loads the page, they should be given the option to create a new workout or continue with their last workout.
+Step 4.) NPM run seed to seed values,
 
-The user should be able to:
+Step 5.) NPM start,
 
-  * Add exercises to the most recent workout plan.
+Step 6.) When you load into the application, you will see "New Workout",
 
-  * Add new exercises to a new workout plan.
+Step 7.) Fill out the form to customize your workout regimen.,
 
-  * View the combined weight of multiple exercises from the past seven workouts on the `stats` page.
-
-  * View the total duration of each workout from the past seven workouts on the `stats` page.
-
-> **Important:** Look into using a MongoDB aggregate function to dynamically add up and return the total duration for each workout. Check out the [MongoDB documentation on the $addFields](https://docs.mongodb.com/manual/reference/operator/aggregation/addFields/), the [MongoDB documentation on the $sum operator](https://docs.mongodb.com/manual/reference/operator/aggregation/sum/), and the [Mongoose documentation on aggregate functions](https://mongoosejs.com/docs/api.html#aggregate_Aggregate) to learn how it can be accomplished.
-
-To deploy an application with a MongoDB database to Heroku, you'll need to set up a MongoDB Atlas account and connect a database from there to your application. Be sure to use the following guides for support:
-
-  * [Set Up MongoDB Atlas](../04-Important/MongoAtlas-Setup.md)
-
-  * [Deploy with Heroku and MongoDB Atlas](../04-Important/MongoAtlas-Deploy.md)
-
-## Commit Early and Often
-
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for the following two reasons:
-
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills.
-
-2. Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
-
-Follow these guidelines for committing:
-
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
-
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
-
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
-
-* Test your application before you commit to ensure functionality at every step in the development process.
-
-We want you to have well over 200 commits by graduation, so commit early and often!
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL to the deployed application
-
-* The URL to the GitHub repository
+Step 8.) Use the Dashboard to see charts
+             
+                     
+# Usage
+              
+This application is used to track workouts.
+                                      
+          
+# License
+            
+License Utilized: 
+![NPM](https://img.shields.io/npm/l/inquirer)
+                      
+                      
+# Contribution
+UWBOOTCAMP , RYAN TA, JASON MA
+              
+# Tests
+NO TESTING FUNCTIONALITY
+              
+# Questions
+Github Username: JMagic-Learner
+Github Profile: 
+[JMagic-Learner](https://github.com/JMagic-Learner)
+              
+If you have any questions, please contact me via email at the following email address;
+MaJason93@gmail.com
