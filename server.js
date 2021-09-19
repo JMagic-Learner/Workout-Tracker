@@ -1,40 +1,28 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const routes = require("./routes")
+const morgan = require("morgan");
+
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
-
+app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
 
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/workout", {
-//   useNewUrlParser: true,
-//   useFindAndModify: false,
-//   useUnifiedTopology: true
-// });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify:false
+});
 
-const username = "<mongodb username>";
-const password = "<password>";
-const cluster = "<cluster name>";
-const dbname = "myFirstDatabase";
-
-mongoose.connect(
-  process.env.MONGODB_URI 
-  || 
-  `mongodb+srv://${username}:${password}@${cluster}.mongodb.net/${dbname}?retryWrites=true&w=majority`, 
-  {
-    useNewUrlParser: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true
-  }
-)
 
 // routes
-app.use(routes);
+
+require("./routes/api")(app);
+require("./routes/frontRoutes")(app);
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
